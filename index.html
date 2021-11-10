@@ -1,0 +1,294 @@
+<!doctype html>
+<html ⚡>
+<head>
+<meta charset="utf-8">
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+
+<!--AMP HTML files require a canonical link pointing to the regular HTML. If no HTML version exists, it should point to itself.-->
+<link rel="canonical" href="index.html">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Satisfy">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black">
+<style amp-custom>
+
+</style>
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+<script>
+	function formButtonhadir(){
+        document.getElementById('rsvpformhadir').style.display="block";
+        document.getElementById('rsvpformtidakhadir').style.display="none";  
+    }
+
+    function formButtontidakhadir(){
+        document.getElementById('rsvpformtidakhadir').style.display="block";
+        document.getElementById('rsvpformhadir').style.display="none";  
+    }
+
+	function formButtonkeluarga(){
+        document.getElementById('rsvpformkeluarga').style.display="block";
+        document.getElementById('rsvpformkenalan').style.display="none";  
+    }
+
+    function formButtonkenalan(){
+        document.getElementById('rsvpformkenalan').style.display="block";
+        document.getElementById('rsvpformkeluarga').style.display="none";  
+    }
+
+</script>
+
+<script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous">
+	</script>
+<script>
+		function SubForm (){
+			$.ajax({
+				url:"https://api.apispreadsheets.com/data/20339/",
+				type:"post",
+				data:$("#myForm").serializeArray(),
+				success: function(){
+					alert("Form Data Submitted :)")
+				},
+				error: function(){
+					alert("There was an error :(")
+				}
+			});
+		}
+	</script>
+</head>
+
+
+<body>	
+
+		<div class="page-content-scroll">
+			
+			<div class="cover-class cover-bg-1">
+				<div class="cover-content">
+				</br></br>
+					<h1 class='heading-cursive heading-huge center-text quarter-bottom color-yellow-dark'>
+						Walimatul Urus
+					</h1>
+				</div>
+				<div class="cover-overlay"></div>
+			</div>
+			
+	</div>
+
+	<!-- toolbar bottom -->
+	<div class="toolbar">
+		<div class="container">
+			<ul class="toolbar-bottom toolbar-wrap">
+				<li class="toolbar-item">
+					<button type="button" class="toolbar-link" data-toggle="modal" data-target="#ModalRSVP">
+						<img src='images/icons/rsvp.png'>
+					  </button>
+						
+					</a>
+				</li>
+				<li class="toolbar-item">
+					<a href="calendar.html" class="toolbar-link">
+						<img src='images/icons/calendar.png'>
+					</a>
+				</li>
+				<li class="toolbar-item">
+					<a href="contact.html" class="toolbar-link">
+						<img src='images/icons/contact.png'>
+					</a>
+				</li>
+				<li class="toolbar-item">
+					<a href="map.html" class="toolbar-link">
+						<img src='images/icons/map.png'>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- end toolbar bottom -->
+<!-- Modal RSVP -->
+<div class="modal fade" id="ModalRSVP" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="ModalRSVPTitle">Sila RSVP Kehadiran Anda</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+
+			<div style="text-align: center;">
+				<button class="buttonhadir" id="formButtonhadir" onclick="formButtonhadir();">Hadir</button>
+				<button class="buttontidakhadir" id="formButtontidakhadir" onclick="formButtontidakhadir();">Tidak Hadir</button><br><br>
+			</div>
+
+			<div id='rsvpformhadir' name="rsvpformhadir" style="display:none">
+				<div style="text-align: center;">
+					<button class="buttonkeluarga" id="formButtonkeluarga" onclick="formButtonkeluarga();">Keluarga</button>
+					<button class="buttonkenalan" id="formButtontidakhadir" onclick="formButtonkenalan();">Kenalan</button><br><br>
+				</div>
+			
+				<div id='rsvpformkeluarga' name="rsvpformkeluarga" style="display:none">
+					<h3 style='text-align: center;'>Hadir (Keluarga)</h3>
+				<form id="myForm">
+				<div class="formFieldWrap">
+					<label class="field-title" for="NameField">Nama:
+					</label>
+					<input type="text" placeholder="Sila Isi Nama Anda" name="nama" class="contactField" id="nama" required  />
+				</div>
+
+				<div class="formFieldWrap">
+					<label class="field-title" for="PhoneNoField">Nombor Telefon:
+					</label>
+					<input type="text" placeholder="Sila Isi Nombor Telefon Anda" name="nombortelefon" class="contactField" id="nombortelefon" required  />
+				</div>
+
+
+				<div class="formFieldWrap">
+					<label class="field-title" for="jumlahkedatangan">Jumlah Kedatangan:
+					</label>
+					<select id="jumlahkedatangan" name="jumlahkedatangan" form="rsvpform" class="contactField">
+						<option value="">Sila Pilih Jumlah Kedatangan Anda</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					  </select>
+				</div>
+
+				<div class="formFieldWrap">
+					<label class="field-title" for="waktu">Waktu Kedatangan:
+					</label>
+					<select id="waktu" name="waktu" form="rsvpform" class="contactField" required>
+						<option value="">Sila Pilih Waktu Kedatangan Anda</option>
+						<option value="11am-12pm">11 Pagi - 12 Tengah Hari</option>
+						<option value="12pm-1pm">12 Tengah Hari - 1 Petang</option>
+						<option value="1pm-2pm">1 Petang - 2 Petang</option>
+					</select>
+				</div>
+
+				<div class="formTextareaWrap">
+					<label class="field-title contactMessageTextarea" for="Mesej">Ucapan Manis Anda:
+					</label>
+					<textarea placeholder="Masukkan Ucapan Manis Anda Disini" name="mesej" class="contactTextarea" id="Mesej" required></textarea>
+				</div>
+				<input type="hidden" id="attendance" name="kedatangan" value="Hadir">
+				<input type="hidden" id="relationship" name="hubungan" value="Keluarga">
+			</form>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" onclick="SubForm()">Save changes</button>
+			  </div>
+			</div>
+
+			<div id='rsvpformkenalan' name="rsvpformkenalan" style="display:none">
+				<h3 style='text-align: center;'>Hadir (Kenalan)</h3>
+				<form id="myForm">
+				<div class="formFieldWrap">
+					<label class="field-title" for="NameField">Nama:
+					</label>
+					<input type="text" placeholder="Sila Isi Nama Anda" name="nama" class="contactField" id="name" required  />
+				</div>
+
+				<div class="formFieldWrap">
+					<label class="field-title" for="PhoneNoField">Nombor Telefon:
+					</label>
+					<input type="text" placeholder="Sila Isi Nombor Telefon Anda" name="nombortelefon" class="contactField" id="phoneno" required  />
+				</div>
+
+
+				<div class="formFieldWrap">
+					<label class="field-title" for="Attendance">Jumlah Kedatangan:
+					</label>
+					<select id="attendance" name="jumlahkedatangan" form="rsvpform" class="contactField">
+						<option value="">Sila Pilih Jumlah Kedatangan Anda</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					  </select>
+				</div>
+
+				<div class="formFieldWrap">
+					<label class="field-title" for="time">Waktu Kedatangan:
+					</label>
+					<select id="time" name="waktu" form="rsvpform" class="contactField">
+						<option value="">Sila Pilih Waktu Kedatangan Anda</option>
+						<option value="2pm-3pm">2 Petang - 3 Petang</option>
+						<option value="3pm-4pm">4 Petang - 4 Petang</option>
+					</select>
+				</div>
+
+				<div class="formTextareaWrap">
+					<label class="field-title contactMessageTextarea" for="Mesej">Ucapan Manis Anda:
+					</label>
+					<textarea placeholder="Masukkan Ucapan Manis Anda Disini" name="mesej" class="contactTextarea" id="Message"></textarea>
+				</div>
+				<input type="hidden" id="attendance" name="kedatangan" value="Hadir">
+				<input type="hidden" id="relationship" name="hubungan" value="Kenalan">
+			</form>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" onclick="SubForm()">Save changes</button>
+			  </div>
+			</div>
+			</div>
+
+			<div id='rsvpformtidakhadir' name="rsvpformtidakhadir" style="display:none">
+				<h3 style='text-align: center;'>Tidak Hadir</h3>
+				<f orm id="myForm">
+				<div class="formFieldWrap">
+					<label class="field-title" for="NameField">Nama:
+					</label>
+					<input type="text" placeholder="Sila Isi Nama Anda" name="nama" class="contactField" id="name" required  />
+				</div>
+
+				<div class="formFieldWrap">
+					<label class="field-title" for="PhoneNoField">Nombor Telefon:
+					</label>
+					<input type="text" placeholder="Sila Isi Nombor Telefon Anda" name="nombortelefon" class="contactField" id="phoneno" required  />
+				</div>
+
+				<div class="formTextareaWrap">
+					<label class="field-title contactMessageTextarea" for="Mesej">Ucapan Manis Anda:
+					</label>
+					<textarea placeholder="Masukkan Ucapan Manis Anda Disini" name="mesej" class="contactTextarea" id="Message"></textarea>
+				</div>
+				<input type="hidden" id="attendance" name="kehadiran" value=" Tidak Hadir">
+				<input type="hidden" id="relationship" name="hubungan" value="-">
+				<input type="hidden" id="relationship" name="jumlahkedatangan" value="-">
+				<input type="hidden" id="relationship" name="waktu" value="-">
+			</form>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" onclick="SubForm()">Save changes</button>
+			  </div>
+			</div>
+		</div>
+		
+	  </div>
+	</div>
+  </div>
+	
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
