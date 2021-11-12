@@ -1285,11 +1285,11 @@ input[type="date"]::-webkit-clear-button {
   background-image: url(../images/covers/kawin2.png);
 }
 .cover-bg-2 {
-  background-image: url(../images/covers/kad3.png);
-}
-.cover-bg-3 {
   background-image: url(../images/covers/kad4.png);
 }
+/* .cover-bg-3 {
+  background-image: url(../images/covers/kad4.png);
+} */
 /* .cover-bg-2 .cover-overlay{background-color:rgba(0,0,0,0.85);} */
 
 .cover-class {
