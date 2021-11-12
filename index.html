@@ -19,6 +19,7 @@
 	<style amp-custom>
 
 	</style>
+	
 	<style amp-boilerplate>
 		body {
 			-webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -110,24 +111,8 @@
 
 	</script>
 
-	<script src="https://code.jquery.com/jquery-3.4.1.js"
-		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
-		</script>
-	<script>
-		function SubForm() {
-			$.ajax({
-				url: "https://api.apispreadsheets.com/data/20339/",
-				type: "post",
-				data: $("#myForm").serializeArray(),
-				success: function () {
-					alert("Form Data Submitted :)")
-				},
-				error: function () {
-					alert("There was an error :(")
-				}
-			});
-		}
-	</script>
+	
+	
 </head>
 
 
@@ -184,43 +169,35 @@
 				</div>
 				<div class="modal-body">
 
-					<div style="text-align: center;">
-						<button class="buttonhadir" id="formButtonhadir" onclick="formButtonhadir();">Hadir</button>
-						<button class="buttontidakhadir" id="formButtontidakhadir"
-							onclick="formButtontidakhadir();">Tidak Hadir</button><br><br>
-					</div>
-
-					<div id='rsvpformhadir' name="rsvpformhadir" style="display:none">
-						<div style="text-align: center;">
-							<button class="buttonkeluarga" id="formButtonkeluarga"
-								onclick="formButtonkeluarga();">Keluarga</button>
-							<button class="buttonkenalan" id="formButtontidakhadir"
-								onclick="formButtonkenalan();">Kenalan</button><br><br>
-						</div>
-
-						<div id='rsvpformkeluarga' name="rsvpformkeluarga" style="display:none">
-							<h3 style='text-align: center;'>Hadir (Keluarga)</h3>
-							<form id="myForm">
+							<form name="rsvpform">
 								<div class="formFieldWrap">
-									<label class="field-title" for="NameField">Nama:
+									<label class="field-title" for="nama">Nama:
 									</label>
 									<input type="text" placeholder="Sila Isi Nama Anda" name="nama" class="contactField"
 										id="nama" required />
 								</div>
 
 								<div class="formFieldWrap">
-									<label class="field-title" for="PhoneNoField">Nombor Telefon:
+									<label class="field-title" for="nombortelefon">Nombor Telefon:
 									</label>
 									<input type="text" placeholder="Sila Isi Nombor Telefon Anda" name="nombortelefon"
 										class="contactField" id="nombortelefon" required />
 								</div>
 
-
 								<div class="formFieldWrap">
+									<label class="field-title" for="kedatangan">Kehadiran:
+									</label>
+									<select id="kedatangan" name="kedatangan" class="contactField">
+										<option value="">Pilih Hadir atau Tidak</option>
+										<option value="1">Hadir</option>
+										<option value="2">Tidak Hadir</option>
+									</select>
+								</div>
+
+								<div class="formFieldWrap" id="jumlahkedatanganform">
 									<label class="field-title" for="jumlahkedatangan">Jumlah Kedatangan:
 									</label>
-									<select id="jumlahkedatangan" name="jumlahkedatangan" form="rsvpform"
-										class="contactField">
+									<select id="jumlahkedatangan" name="jumlahkedatangan" class="contactField">
 										<option value="">Sila Pilih Jumlah Kedatangan Anda</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
@@ -234,110 +211,53 @@
 										<option value="10">10</option>
 									</select>
 								</div>
-				<div class="formTextareaWrap">
+
+								<div class="formFieldWrap" id="hubunganform">
+									<label class="field-title" for="hubungan">Hubungan:
+									</label>
+									<select id="hubungan" name="hubungan" class="contactField">
+										<option value="">Pilih Hubungan</option>
+										<option value="1">Keluarga</option>
+										<option value="2">Kenalan</option>
+									</select>
+								</div>
+
+								<div class="formFieldWrap" id='waktuform'>
+									<label class="field-title" for="waktu">Waktu Kedatangan:
+									</label>
+									<select id="waktu" name="waktu" class="contactField">
+										<option value="">Sila Pilih Waktu Kedatangan Anda</option>
+										<option id ="waktu1" value="11am-12pm">11 Pagi - 12 Tengah Hari</option>
+										<option id ="waktu2" value="12pm-1pm">12 Tengah Hari - 1 Petang </option>
+										<option id ="waktu3" value="1pm-2pm">1 Petang - 2 Petang</option>
+										<option id ="waktu4" value="2pm-3pm">2 Petang - 3 Petang</option>
+										<option id ="waktu5" value="3pm-4pm">3 Petang - 4 Petang </option>
+									</select>
+								</div>
+
+							
+				<div class="formTextareaWrap" id="mesejform">
 					<label class="field-title contactMessageTextarea" for="Mesej">Ucapan Manis Anda:
 					</label>
-					<textarea placeholder="Masukkan Ucapan Manis Anda Disini" name="mesej" class="contactTextarea" id="Mesej" required></textarea>
+					<textarea placeholder="Masukkan Ucapan Manis Anda Disini" name="mesej" class="contactTextarea" id="mesej" required></textarea>
 				</div>
-				<input type="hidden" id="attendance" name="kedatangan" value="Hadir">
-				<input type="hidden" id="relationship" name="hubungan" value="Keluarga">
-			</form>
-			<div class="modal-footer">
+				<div class="modal-footer">
 				<button class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button class="btn btn-primary" onclick="SubForm()">Save changes</button>
-			  </div>
+				<button class="btn btn-primary" type="submit">Save changes</button>
 			</div>
-			<div id='rsvpformkenalan' name="rsvpformkenalan" style="display:none">
-							<h3 style='text-align: center;'>Hadir (Kenalan)</h3>
-							<form id="myForm">
-								<div class="formFieldWrap">
-									<label class="field-title" for="NameField">Nama:
-									</label>
-									<input type="text" placeholder="Sila Isi Nama Anda" name="nama" class="contactField"
-										id="name" required />
-								</div>
-
-								<div class="formFieldWrap">
-									<label class="field-title" for="PhoneNoField">Nombor Telefon:
-									</label>
-									<input type="text" placeholder="Sila Isi Nombor Telefon Anda" name="nombortelefon"
-										class="contactField" id="phoneno" required />
-								</div>
-
-
-								<div class="formFieldWrap">
-									<label class="field-title" for="Attendance">Jumlah Kedatangan:
-									</label>
-									<select id="attendance" name="jumlahkedatangan" form="rsvpform"
-										class="contactField">
-										<option value="">Sila Pilih Jumlah Kedatangan Anda</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-										<option value="6">6</option>
-										<option value="7">7</option>
-										<option value="8">8</option>
-										<option value="9">9</option>
-										<option value="10">10</option>
-									</select>
-								</div>
-
-				<div class="formTextareaWrap">
-					<label class="field-title contactMessageTextarea" for="Mesej">Ucapan Manis Anda:
-					</label>
-					<textarea placeholder="Masukkan Ucapan Manis Anda Disini" name="mesej" class="contactTextarea" id="Message"></textarea>
-				</div>
-				<input type="hidden" id="attendance" name="kedatangan" value="Hadir">
-				<input type="hidden" id="relationship" name="hubungan" value="Kenalan">
 			</form>
-			<div class="modal-footer">
-				<button  class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button  class="btn btn-primary" onclick="SubForm()">Save changes</button>
-			  </div>
-			</div>
-			</div>
-					<div id='rsvpformtidakhadir' name="rsvpformtidakhadir" style="display:none">
-						<h3 style='text-align: center;'>Tidak Hadir</h3>
-						<f orm id="myForm">
-							<div class="formFieldWrap">
-								<label class="field-title" for="NameField">Nama:
-								</label>
-								<input type="text" placeholder="Sila Isi Nama Anda" name="nama" class="contactField"
-									id="name" required />
-							</div>
-
-							<div class="formFieldWrap">
-								<label class="field-title" for="PhoneNoField">Nombor Telefon:
-								</label>
-								<input type="text" placeholder="Sila Isi Nombor Telefon Anda" name="nombortelefon"
-									class="contactField" id="phoneno" required />
-							</div>
-
-							<div class="formTextareaWrap">
-								<label class="field-title contactMessageTextarea" for="Mesej">Ucapan Manis Anda:
-								</label>
-								<textarea placeholder="Masukkan Ucapan Manis Anda Disini" name="mesej"
-									class="contactTextarea" id="Message"></textarea>
-							</div>
-							<input type="hidden" id="attendance" name="kehadiran" value=" Tidak Hadir">
-							<input type="hidden" id="relationship" name="hubungan" value="-">
-							<input type="hidden" id="relationship" name="jumlahkedatangan" value="-">
-							<input type="hidden" id="relationship" name="waktu" value="-">
-							</form>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-primary" onclick="SubForm()">Save changes</button>
-							</div>
-					</div>
+			<div id="form_alert"></div>
+			
+			
+			
+							
+		</div>
 				
 				
 			
 		</div>
 		
 	  </div>
-	</div>
   </div>
 
 <!-- Modal Calendar -->
@@ -480,9 +400,7 @@
 	</div>
 
 </body>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-	crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
 	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
 	crossorigin="anonymous"></script>
@@ -490,6 +408,71 @@
 	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 	crossorigin="anonymous"></script>
 
+	  
+	  <script>
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbwHNW3OOHCsGOXc9s4Eyg64bj56GHyTD5A0-LYhMT_4qiqpwZ2PSRLwGvOYI8tQ09M/exec'
+		const form = document.forms['rsvpform']
+	  
+		form.addEventListener('submit', e => {
+		  e.preventDefault()
+		  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+		  .then(response => $("#form_alert").html("<div class='alert alert-success'> RSVP sent successfully.</div>"))
+		.catch(error => $("#form_alert").html("<div class='alert alert-success'> RSVP dont sent successfully.</div>"))
+		})
+	  </script>
+
+<script>
+$("#kedatangan").change(function(){
+    if($(this).val() == 1){
+      $("#jumlahkedatanganform").show();
+	  $("#hubunganform").show();
+	  $("#mesejform").show();
+	  $("#waktuform").hide();
+
+    }else if($(this).val() == 2) {
+		$("#mesejform").show();
+		$("#jumlahkedatanganform").hide();
+		$("#hubunganform").hide();
+		$("#waktukeluargaform").hide();
+		$("#waktuform").hide();
+    }
+	else{$("#mesejform").hide();
+		$("#jumlahkedatanganform").hide();
+		$("#hubunganform").hide();
+		$("#waktuform").hide();
+	}
+
+});
+
+$("#hubungan").change(function(){
+    if($(this).val() == 1){
+		$("#waktuform").show();
+		$("#waktu1").show();
+		$("#waktu2").show();
+		$("#waktu3").show();
+		$("#waktu4").hide();
+		$("#waktu5").hide();
+    }else if($(this).val() == 2){
+		$("#waktuform").show();
+		$("#waktu1").hide();
+		$("#waktu2").hide();
+		$("#waktu3").hide();
+		$("#waktu4").show();
+		$("#waktu5").show();
+    }
+	else{$("#waktuform").hide();
+		$("#waktu1").hide();
+		$("#waktu2").hide();
+		$("#waktu3").hide();
+		$("#waktu4").hide();
+		$("#waktu5").hide();}
+
+});
+</script>
+
+	  
+
+	  
 
 
 </html>

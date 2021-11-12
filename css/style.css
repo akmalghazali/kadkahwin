@@ -1741,3 +1741,47 @@ amp-social-share[type="sms"]:before{content: "\f075 ";}
 	.griditem2 {
 		margin: auto;
 	}
+
+
+
+	#hubunganform{
+		display: none;
+	}
+
+	#jumlahkedatanganform{
+		display: none;
+	}
+
+	#waktukenalanform{
+		display: none;
+	}
+
+	#waktukeluargaform{
+		display: none;
+	}
+
+	#mesejform{
+		display: none;
+	}
+	#waktuform{
+		display: none;
+	}
+
+	#waktu1{
+		display: none;
+	}
+	#waktu2{
+		display: none;
+	}
+	#waktu3{
+		display: none;
+	}
+	#waktu4{
+		display: none;
+	}
+	#waktu5{
+		display: none;
+	}
+
+	
+	
