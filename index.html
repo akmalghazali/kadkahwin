@@ -40,10 +40,9 @@
 </script>
 
 <script
-		src="https://code.jquery.com/jquery-3.4.1.js"
-		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-		crossorigin="anonymous">
-	</script>
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 <script>
 		function SubForm (){
 			$.ajax({
@@ -87,22 +86,23 @@
 						<img src='images/icons/rsvp.png'>
 					  </button>
 						
-					</a>
+					
 				</li>
 				<li class="toolbar-item">
-					<a href="calendar.html" class="toolbar-link">
+					<button type="button" class="toolbar-link" data-toggle="modal" data-target="#ModalCalendar">
 						<img src='images/icons/calendar.png'>
-					</a>
+					  </button>
+					
 				</li>
 				<li class="toolbar-item">
-					<a href="contact.html" class="toolbar-link">
+					<button type="button" class="toolbar-link" data-toggle="modal" data-target="#ModalContact">
 						<img src='images/icons/contact.png'>
-					</a>
+					</button>
 				</li>
 				<li class="toolbar-item">
-					<a href="map.html" class="toolbar-link">
+					<button type="button" class="toolbar-link" data-toggle="modal" data-target="#ModalMap">
 						<img src='images/icons/map.png'>
-					</a>
+					</button>
 				</li>
 			</ul>
 		</div>
@@ -185,8 +185,8 @@
 				<input type="hidden" id="relationship" name="hubungan" value="Keluarga">
 			</form>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary" onclick="SubForm()">Save changes</button>
+				<button class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button class="btn btn-primary" onclick="SubForm()">Save changes</button>
 			  </div>
 			</div>
 
@@ -243,8 +243,8 @@
 				<input type="hidden" id="relationship" name="hubungan" value="Kenalan">
 			</form>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary" onclick="SubForm()">Save changes</button>
+				<button  class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button  class="btn btn-primary" onclick="SubForm()">Save changes</button>
 			  </div>
 			</div>
 			</div>
@@ -275,12 +275,152 @@
 				<input type="hidden" id="relationship" name="waktu" value="-">
 			</form>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary" onclick="SubForm()">Save changes</button>
+				<button class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button class="btn btn-primary" onclick="SubForm()">Save changes</button>
 			  </div>
 			</div>
 		</div>
 		
+	  </div>
+	</div>
+  </div>
+
+<!-- Modal Calendar -->
+<div class="modal fade" id="ModalCalendar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Simpan Kalendar</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  <div class="calendarcontainer">
+			  <div class="calendartop">
+				  <p class="calendartoptext">Ahad</p>
+			  </div>
+			  <div class="calendarbottom">
+				<p class="calendarbottomtext">5 Disember 2021</p>
+			</div>
+			</div>
+		  <br><p style='text-align: center;'>Tambah di Kalendar</p>
+		  <a href='https://www.google.com/calendar/render?action=TEMPLATE&text=Walimatul+Urus+Asyraf+%26+Hanis&location=Namida+Garden+%26+Events%2C+Kota+Warisan&dates=20211205T030000Z%2F20211205T080000Z'>
+			  <img style='width: 40%;' src='images/button/GoogleCalendar.svg' class="imgcenter"></a>
+		  
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+  <!-- Modal Contact -->
+<div class="modal fade" id="ModalContact" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Hubungi</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  <div class="gridcontainer">
+			  <div class="gridname">
+				  Hafiz
+			  </div>
+			  <div class="griditem">
+				<a href="tel:+60199075458">
+					<img src="images/icons/call.png" alt="" width="70%">
+				</a>
+			  </div>
+			  <div class="griditem">
+				<a href="https://wa.link/cf2uz8">
+					<img src="images/icons/whatsapp.png" alt="" width="50%">
+				</a>
+			  </div>
+		  </div>
+		  <div class="gridcontainer">
+			<div class="gridname">
+				Hazim
+			</div>
+			<div class="griditem">
+			  <a href="tel:+60142350524">
+				  <img src="images/icons/call.png" alt="" width="70%">
+			  </a>
+			</div>
+			<div class="griditem">
+			  <a href="https://wa.link/8z51j9">
+				  <img src="images/icons/whatsapp.png" alt="" width="50%">
+			  </a>
+			</div>
+		</div>
+		<div class="gridcontainer">
+			<div class="gridname">
+				Huda Iffah
+			</div>
+			<div class="griditem">
+			  <a href="tel:+60129144625">
+				  <img src="images/icons/call.png" alt="" width="70%">
+			  </a>
+			</div>
+			<div class="griditem">
+			  <a href="https://wa.link/p3wf2c">
+				  <img src="images/icons/whatsapp.png" alt="" width="50%">
+			  </a>
+			</div>
+		</div>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+    <!-- Modal Map -->
+<div class="modal fade" id="ModalMap" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Lokasi</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<div class="map">
+				<!-- Google Map Copied Code -->
+				<iframe src=
+					"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.0228669810945!2d101.7073509140433!3d2.8094377559322314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdc745f68e528b%3A0x548ed8b09bfa7014!2sNamida%20Garden%20%26%20Events!5e0!3m2!1sen!2smy!4v1636613846744!5m2!1sen!2smy"
+						width="350"
+						height="250"
+						frameborder="0"
+						style="border:0;"
+						allowfullscreen=""
+						aria-hidden="false"
+						tabindex="0" class='imgcenter'>
+				</iframe>
+			</div>
+		
+			<div class="gridcontainer2">
+				
+				<div class="griditem2">
+					<a href="https://www.waze.com/en/live-map/directions/namida-garden-and-event-jalan-stesen-erl-33-sepang?place=w.66650140.666566937.23314902">
+						<img src="images/button/waze.svg" alt="" width="150px"><br>
+						
+					</a>
+				</div>
+
+				<div class="griditem2">
+					<a href="https://goo.gl/maps/hqsMPjXPPc2uVtc28">
+						<img src="images/button/googlemap.svg" alt="" width="150px"> <br>
+					</a>
+				</div>
+			</div>
+		</div>
 	  </div>
 	</div>
   </div>
