@@ -1787,7 +1787,7 @@ amp-social-share[type="sms"]:before{content: "\f075 ";}
 		font-size: 3em;
 		font-weight: 100;
 		color: black;
-		text-shadow: 0 0 20px #48c8ff;
+		text-shadow: 0 0 20px #f8e432;
 	  }
 	   
 	  #timer div {
@@ -1828,6 +1828,10 @@ amp-social-share[type="sms"]:before{content: "\f075 ";}
 		  justify-content: center;
 		  align-items: center;
 		background: white;
+	  }
+
+	  body{
+		  background-color: white;
 	  }
 
 	
