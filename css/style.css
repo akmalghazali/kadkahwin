@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Niconne&display=swap");
 body {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
@@ -1311,7 +1312,7 @@ input[type="date"]::-webkit-clear-button {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 60vh;
+  height: 50vh;
   /* border-bottom:solid 1px rgba(255,255,255,0.05); */
 }
 
@@ -2517,74 +2518,80 @@ amp-social-share[type="sms"]:before {
   font-size: 0.35em;
   font-weight: 400;
 }
+@media only screen and (max-width: 600px) {
+  .outside {
+    position: relative;
+    width: 70vmin;
+    height: 70vmin;
+    background: rgb(238, 171, 47);
+    -webkit-clip-path: polygon(
+      50% 0%,
+      83% 12%,
+      100% 43%,
+      94% 78%,
+      68% 100%,
+      32% 100%,
+      6% 78%,
+      0% 43%,
+      17% 12%
+    );
+    clip-path: polygon(
+      50% 0%,
+      83% 12%,
+      100% 43%,
+      94% 78%,
+      68% 100%,
+      32% 100%,
+      6% 78%,
+      0% 43%,
+      17% 12%
+    );
+  }
 
-.outside {
-  position: relative;
-  width: 70vmin;
-  height: 70vmin;
-  background: rgb(238, 171, 47);
-  -webkit-clip-path: polygon(
-    50% 0%,
-    83% 12%,
-    100% 43%,
-    94% 78%,
-    68% 100%,
-    32% 100%,
-    6% 78%,
-    0% 43%,
-    17% 12%
-  );
-  clip-path: polygon(
-    50% 0%,
-    83% 12%,
-    100% 43%,
-    94% 78%,
-    68% 100%,
-    32% 100%,
-    6% 78%,
-    0% 43%,
-    17% 12%
-  );
+  .inside {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: white;
+    -webkit-clip-path: polygon(
+      50% 0%,
+      83% 12%,
+      100% 43%,
+      94% 78%,
+      68% 100%,
+      32% 100%,
+      6% 78%,
+      0% 43%,
+      17% 12%
+    );
+    clip-path: polygon(
+      50% 0%,
+      83% 12%,
+      100% 43%,
+      94% 78%,
+      68% 100%,
+      32% 100%,
+      6% 78%,
+      0% 43%,
+      17% 12%
+    );
+  }
+
+  .timer-countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+  }
 }
-
-.inside {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  background: white;
-  -webkit-clip-path: polygon(
-    50% 0%,
-    83% 12%,
-    100% 43%,
-    94% 78%,
-    68% 100%,
-    32% 100%,
-    6% 78%,
-    0% 43%,
-    17% 12%
-  );
-  clip-path: polygon(
-    50% 0%,
-    83% 12%,
-    100% 43%,
-    94% 78%,
-    68% 100%,
-    32% 100%,
-    6% 78%,
-    0% 43%,
-    17% 12%
-  );
+.timer-style {
+  padding-top: 2px;
+  padding-bottom: 100px;
+  background-color: white;
+  text-align: center;
 }
-
-.timer-countdown {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: white;
-}
-
 body {
   background-color: white;
 }
@@ -2592,4 +2599,11 @@ body {
   background-color: #faa307;
   border: 0;
   color: #000000;
+}
+
+.hari {
+  font-family: "Niconne";
+  font-size: 30px;
+  color: #faa307;
+  text-align: center;
 }
