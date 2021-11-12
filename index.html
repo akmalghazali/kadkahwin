@@ -123,6 +123,16 @@
 		</div>
 		<div class="cover-class2 cover-bg-2">
 		</div>
+		<div class="timer-countdown">
+			<div class="outside">
+				<div class="inside" style="text-align: center;"> 
+					<br><br><br><h2>Countdown</h2>
+					<div id="timer" style="padding-top: 50px; padding-bottom: 100px; background-color: white; text-align: center;"></div></div>
+			  </div>
+				
+				<br><br><br><br><br>
+				
+		</div>
 	</div>
 
 	<!-- toolbar bottom -->
@@ -470,6 +480,39 @@ $("#hubungan").change(function(){
 
 });
 </script>
+
+<script>
+	function updateTimer() {
+	  future = Date.parse("dec 5, 2021 11:00:00");
+	  now = new Date();
+	  diff = future - now;
+	 
+	  days = Math.floor(diff / (1000 * 60 * 60 * 24));
+	  hours = Math.floor(diff / (1000 * 60 * 60));
+	  mins = Math.floor(diff / (1000 * 60));
+	  secs = Math.floor(diff / 1000);
+	 
+	  d = days;
+	  h = hours - days * 24;
+	  m = mins - hours * 60;
+	  s = secs - mins * 60;
+	 
+	  document.getElementById("timer").innerHTML =
+		"<div>" +
+		d +
+		"<span>Days</span></div>" +
+		"<div>" +
+		h +
+		"<span>Hours</span></div>" +
+		"<div>" +
+		m +
+		"<span>Minutes</span></div>" +
+		"<div>" +
+		s +
+		"<span>Seconds</span></div>";
+	}
+	setInterval("updateTimer()", 1000);
+	</script>
 
 	  
 
