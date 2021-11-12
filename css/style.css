@@ -685,10 +685,10 @@ input[type=date]::-webkit-clear-button
 	/* border-bottom:solid 1px rgba(255,255,255,0.05); */
 }
 .cover-class2{
-	background-size:contain;
+	background-size:cover;
 	 background-repeat: no-repeat;
 	background-position:center center;
-	height:90vh;
+	height: 160vh;	
 	/* border-bottom:solid 1px rgba(255,255,255,0.05); */
 }
 
